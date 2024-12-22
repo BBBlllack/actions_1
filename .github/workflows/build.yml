@@ -8,11 +8,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: whoami
+      - run: systemctl status ssh
+      - run: service ssh status
+      - run: ss -tuln | grep :22
+      - run: netstat -tuln | grep :22
       - run: uname -a
-      - run: curl https://api.ipify.org/?format=text
-      - run: pwd
-      - run: chmod 777 ./frpc
-      - run: ./frpc -c frpc.toml &
-      - run: npm --version
-      - run: npm install 
-      - run: npm run dev -- --host 0.0.0.0 
+      # - run: curl https://api.ipify.org/?format=text
+      # - run: pwd
+      # - run: chmod 777 ./frpc
+      # - run: ./frpc -c frpc.toml &
+      # - run: npm --version
+      # - run: npm install 
+      # - run: npm run dev -- --host 0.0.0.0 
