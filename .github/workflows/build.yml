@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - use: actions/checkout@v4
+      - uses: actions/checkout@v4
       - run: pwd
       - run: npm --version
       - run: npm install 
