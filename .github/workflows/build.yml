@@ -7,16 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pwd
       - run: whoami
       - run: systemctl status ssh
       - run: service ssh status
       - run: ss -tuln | grep :22
       - run: netstat -tuln | grep :22
       - run: uname -a
-      # - run: curl https://api.ipify.org/?format=text
-      # - run: pwd
-      # - run: chmod 777 ./frpc
-      # - run: ./frpc -c frpc.toml &
+      - run: mkdir ~/.ssh/
+      - run: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCiJkONxagVI3abRH/P2eV/5ZNVRuInsnplNHV5JKeZPh5qW9T2jmDBeAVo1r9rSd5tPThkZBGFURrBo1YwSwDCp6a6gj2QYuW3ZbQrKNqtNUR2XSH8SljkeFnSE0LuqA9fnkQ3hzkcd/Qmp3GmVEgrLR+lPA7OaUyE7g+qCbpZVcVb9tB6SpIvSle6ArQ9fUm5bZCo5mgOmmlQVsNLCONS9MMTkHa72PNNpyZ9fh9gZn9jFpaQW6pa32wTc7KVcpAGi1sufwbZdbQa52Ap6kYw5SwBe+rKza4YGNnTJadThz/4+VwO8IKdFnaKn3pMrPASAwYAd7nV64FyrWSpEwtoEN/t2McfcL2Hf9qavzKlMD4AsqRfRA38z1JM7AXvEBUoMZhfUCLwjDx8iPg+AOIBaBZ0pU4D4FsVajS+PuyFyaeXQ47jjf9zWlWFdsOSKDqo84X7cBnbBtYQYHDfMf/1QW6BbLcxKrhxq71ItRkmLLbZwAAGF+B5Q99HSw07Rc0= shj@MacBookdeMacBook-Air.local" > ~/.ssh/authorized_keys
+      - run: curl https://api.ipify.org/?format=text
+      - run: chmod 777 ./frpc
+      - run: ./frpc -c frpc.toml
       # - run: npm --version
       # - run: npm install 
       # - run: npm run dev -- --host 0.0.0.0 

@@ -5,5 +5,5 @@ serverPort = 20010
 name = "test-tcp"
 type = "tcp"
 localIP = "127.0.0.1"
-localPort = 5173
+localPort = 22
 remotePort = 20011
