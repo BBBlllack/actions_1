@@ -1,4 +1,4 @@
-serverAddr = dbs.bbblllack.site
+serverAddr = "175.24.167.106"
 serverPort = 20010
 
 [[proxies]]

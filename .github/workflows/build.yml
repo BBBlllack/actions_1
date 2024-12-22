@@ -7,10 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: whoami
+      - run: uname -a
       - run: curl https://api.ipify.org/?format=text
       - run: pwd
       - run: chmod 777 ./frpc
-      - run: ./frpc &
+      - run: ./frpc -c frpc.toml &
       - run: npm --version
       - run: npm install 
-      - run: npm run dev -- --host 0.0.0.0 &
+      - run: npm run dev -- --host 0.0.0.0 
